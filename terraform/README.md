@@ -14,18 +14,18 @@
 	* Security groups in place with restrictive opening
 	* Access to Application and infrastructure only through jump box
 * Modularised 
-	* The code uses modules for terraform registry and custom modules for reusability
+	* The code uses modules for terraform registry and custom module for reusability
 * State
-	* Terraform state is keep in S3 in a remote bucket
+	* Terraform state is keep on S3 in a remote bucket
 * CMS - Wordpress
 	* Used userdata to setup wordpress for demonstration purpose
-	* Better alternative custom AMI 
+	* Better alternative is to use a custom AMI 
 
 ## Running terraform
 
 ### Prerequisite
 * Pem Key to access instances should be created
-* S3 state backup bucket should be created
+* S3 bucket for Terraform state backup should be created
 
 ### Switch workspace
 
@@ -36,7 +36,7 @@ Switch to the right workspace
 # terraform workspace select dev
 ```
 
-### First run
+### Setting up infrastructure
 
 On first run and whenever EC2 instances are recreated below command should be used, to bring up the instance first in a targetted way. 
 You'll be prompted for RDS DB password 
@@ -50,3 +50,21 @@ You'll be prompted for RDS DB password
 ```
 terraform apply --var-file=dev.tfvars 
 ```
+
+### Removing infrastructure
+```
+terraform destroy 
+```
+
+## Testing strategy
+* A manual check with below will give an idea on the changes that are going to be made.
+```
+terraform validate
+terraform plan
+```
+* The basic rule once deployment is done is to test the end points.
+	* HTTP - ALB end point for 200 response / curl can be used here
+		This validates that the backend systems are all properly configured and security groups are opened properly
+	* SSH  - For Bastion host SSH response / ssh -q ec2-user@bastion exit; echo $?
+		This validates the connectivity to the infrastructure
+* For advanced infrastructure testing a tool similar to Terratest can be used.
