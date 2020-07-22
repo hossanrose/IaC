@@ -1,6 +1,6 @@
 ## Infrastructure Layout
 ![CMS infrastructure]
-(https://ibb.co/DrWK4pZ)
+(https://pasteboard.co/JiPt5ei.png )
 
 ## Considerations
 * High Availabilty/Fault tolerance
@@ -51,10 +51,3 @@ You'll be prompted for RDS DB password
 ```
 terraform apply --var-file=dev.tfvars 
 ```
-
-
-## Considerations
-
-* Using userdata to setup wordpress for demonstration purpose
-* AccessKey should be created
-* S3 state backup bucket should be created
