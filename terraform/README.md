@@ -18,14 +18,14 @@
 * State
 	* Terraform state is keep on S3 in a remote bucket
 * CMS - Wordpress
-	* Used userdata to setup wordpress for demonstration purpose
+	* Used userdata to setup wordpress for demonstration purpose. URL will be <ALB_address>/cms
 	* Better alternative is to use a custom AMI 
 
 ## Running terraform
 
 ### Prerequisite
-* Pem Key to access instances should be created
-* S3 bucket for Terraform state backup should be created
+* Pem Key to access instances should be created and configured on dev.tfvars file
+* S3 bucket for Terraform state backup should be created and configured on main.tf file
 
 ### Switch workspace
 
