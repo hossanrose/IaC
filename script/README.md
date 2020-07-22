@@ -15,5 +15,12 @@ __Email syntax:__ local-part@domain
 * digits 0 to 9, provided that top-level domain names are not all-numeric
 * hyphen -, provided that it is not the first or last character
 * domain may be an IP address literal, surrounded by square brackets []
-* some special cases like example , localhost are accepted without top level domain
+
+## References
+https://en.wikipedia.org/wiki/Email_address
+https://emailregex.com/
+https://regex101.com/
+
+__Caveat__
+* Lazy matching performed
 
