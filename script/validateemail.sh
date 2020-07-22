@@ -17,7 +17,6 @@
 		# * digits 0 to 9, provided that top-level domain names are not all-numeric
 		# * hyphen -, provided that it is not the first or last character
 		# * domain may be an IP address literal, surrounded by square brackets []
-		# * some special cases like example , localhost are accepted without top level domain
 
 		## Comment rule
 		# Comments are allowed in the domain as well as in the local-part. ex: john.smith@(comment)example.com and john.smith@example.com(comment) 
