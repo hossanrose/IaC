@@ -1,7 +1,7 @@
-# Technical test
+## Technical test
 
-## Terraform
+### Terraform
 CMS infrastructure setup
 
-## Bash scripting
+### Bash scripting
 Email validation
