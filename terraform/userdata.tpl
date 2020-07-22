@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 1m
+sleep 5m
 echo "--------------------------UserData Start---------------------------"
 ## Install AWS EFS Utilities / httpd
 sudo yum update -y

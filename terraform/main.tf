@@ -229,6 +229,13 @@ module "cms_jump_sec" {
     },
   ]
 
+  egress_with_cidr_blocks = [
+    {
+      rule        = "all-all"
+      cidr_blocks = "0.0.0.0/0"
+    },
+  ]
+
   tags = var.common_tags
 }
 

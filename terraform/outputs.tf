@@ -20,6 +20,11 @@ output "ec2_cms_private_ips" {
   value       = module.ec2_cms.private_ip
 }
 
+output "bastion_public_ip" {
+  description = "Public IP addresses of Bastion instance"
+  value       = module.ec2_jump.public_ip
+}
+
 output "alb_dns_name" {
   description = "Public DNS addresses of ALB"
   value       = module.alb.this_lb_dns_name
