@@ -1,6 +1,5 @@
 ## Infrastructure Layout
-![CMS infrastructure]
-(https://pasteboard.co/JiPt5ei.png )
+![CMS infrastructure](https://pasteboard.co/JiPt5ei.png )
 
 ## Considerations
 * High Availabilty/Fault tolerance
