@@ -17,6 +17,7 @@
 		# * digits 0 to 9, provided that top-level domain names are not all-numeric
 		# * hyphen -, provided that it is not the first or last character
 		# * domain may be an IP address literal, surrounded by square brackets []
+		# * some special cases like example , localhost are accepted without top level domain
 
 		## Comment rule
 		# Comments are allowed in the domain as well as in the local-part. ex: john.smith@(comment)example.com and john.smith@example.com(comment) 
@@ -32,7 +33,7 @@ output=/tmp/output.txt; > $output
 for email in `cat $email_list`
 do 
 	counter=$(($counter+1)) 
-	if [[ $email =~ (^[a-z0-9+_-]+(\.[a-z0-9+_-]+)*|\"([\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*\")@((([a-zA-Z0-9]+[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})|(example$))|(\[((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3})(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])\]) ]]
+	if [[ $email =~ (^[a-z0-9+_]+(\.[a-z0-9+_-]+)*(\-*[a-z0-9+_])+|\"([\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*\")@((([a-zA-Z0-9]+([a-zA-Z0-9-]+\.)[a-zA-Z]{2,}))|(\[((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3})(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])\]|(example$)) ]]
     	then
 		echo "Valid email: $email"
     	else
