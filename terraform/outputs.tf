@@ -20,8 +20,12 @@ output "ec2_cms_private_ips" {
   value       = module.ec2_cms.private_ip
 }
 
-
 output "alb_dns_name" {
   description = "Public DNS addresses of ALB"
   value       = module.alb.this_lb_dns_name
+}
+
+output "rds_dns_name" {
+  description = "Private DNS addresses of RDS"
+  value       = module.rds_cms.this_db_instance_address
 }

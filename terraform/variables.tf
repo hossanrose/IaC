@@ -39,6 +39,10 @@ variable "vpc_enable_nat_gateway" {
   type        = bool
 }
 
+variable "ec2_instance_count" {
+  description = "Number of instances in cluster"
+  type        = string
+}
 
 variable "ec2_cluster_name" {
   description = "Name of cluster created by EC2 module"
@@ -65,6 +69,21 @@ variable "key_name" {
   type        = string
 }
 
+variable "ec2_jump_name" {
+  description = "Bastion instance name"
+  type        = string
+}
+
+variable "ec2_jump_type" {
+  description = "Instance tyoe of Bastion"
+  type        = string
+}
+
+variable "ec2_jump_volume" {
+  description = "Bastion root volume size"
+  type        = string
+}
+
 
 variable "alb_name" {
   description = "Name of ALB"
@@ -76,6 +95,55 @@ variable "alb_name_prefix" {
   type        = string
 }
 
+variable "rds_cms_name" {
+  description = "Name for DB"
+  type        = string
+}
+
+variable "rds_cms_engine" {
+  description = "Engine for DB"
+  type        = string
+}
+
+variable "rds_cms_user" {
+  description = "User for DB"
+  type        = string
+}
+
+variable "rds_cms_pass" {
+  description = "Password for DB"
+  type        = string
+}
+
+variable "rds_cms_type" {
+  description = "Instance type for DB"
+  type        = string
+}
+
+variable "rds_cms_version" {
+  description = "Version of DB engine"
+  type        = string
+}
+
+variable "rds_cms_enversion" {
+  description = "Version of DB engine"
+  type        = string
+}
+
+variable "rds_cms_family" {
+  description = "Family of DB engine"
+  type        = string
+}
+
+variable "rds_cms_volume" {
+  description = "RDS volume size"
+  type        = string
+}
+
+variable "rds_cms_port" {
+  description = "RDS port"
+  type        = string
+}
 
 variable "common_tags" {
   description = "Common tags"
