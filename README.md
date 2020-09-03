@@ -1,7 +1,9 @@
-## Technical test
+## IaC
 
 ### Terraform
-CMS infrastructure setup
+- Content managment system infrastructure setup
+- Elastic Kubernetes Service setup
+- Misc components 
 
 ### Bash scripting
 Email validation
