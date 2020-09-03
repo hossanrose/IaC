@@ -5,5 +5,3 @@
 - Elastic Kubernetes Service setup
 - Misc components 
 
-### Bash scripting
-Email validation
